@@ -12,8 +12,16 @@ describe('extract-media-type-parameters', function () {
       expect(extractMediaTypeParameters('application/json;data=test')).toEqual({ data: 'test' })
     })
 
+    test('when given a media type with multiple parameters it extracts successfully', function () {
+      expect(extractMediaTypeParameters('appliction/json; q=1; charset=utf-8')).toEqual({ q: '1', charset: 'utf-8' })
+    })
+
     test('when given a media type with a quoted value it extracts the whole value', function () {
       expect(extractMediaTypeParameters('appliction/json;name="Linus Cash"')).toEqual({ name: 'Linus Cash' })
+    })
+
+    test('when given a media type with spacing between parameters it extracts successfully', function () {
+      expect(extractMediaTypeParameters('appliction/json; name="Linus Cash"; hello=world')).toEqual({ name: 'Linus Cash', hello: 'world' })
     })
   })
 
