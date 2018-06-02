@@ -35,6 +35,12 @@ describe('extract-media-type-parameters', function () {
     })
   })
 
+  describe('a media type with an attribute but no value it extracts it as an empty string', function () {
+    test('a value without an accompanying attribute does not get returned', function () {
+      expect(extractMediaTypeParameters('application/json; =attribute')).toEqual({})
+    })
+  })
+
   describe('when given something other than a string it will throw a friendly error', function () {
     it('throws when given an object', function () {
       expect(() => extractMediaTypeParameters({})).toThrow(new TypeError('mediatype must be a string'))

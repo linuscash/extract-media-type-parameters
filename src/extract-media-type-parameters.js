@@ -13,6 +13,7 @@ function extractMediaTypeParameters (mediatype) {
     .split(';') // split remaining string up into 'name=value' parameters
     .map(param => param.split('=')) // split each parameter up so we now have a name and a value
     .map(([ name, value ]) => [ name.replace(' ', ''), (value || '').replace(/'|"/g, '') ])
+    .filter(([ name ]) => name.length > 0)
     .reduce((accumulator, [ name, value ]) => ({ ...accumulator, [name]: value }), {})
 }
 
