@@ -21,7 +21,13 @@ describe('extract-media-type-parameters', function () {
     })
 
     test('when given a media type with spacing between parameters it extracts successfully', function () {
-      expect(extractMediaTypeParameters('appliction/json; name="Linus Cash"; hello=world')).toEqual({ name: 'Linus Cash', hello: 'world' })
+      expect(extractMediaTypeParameters('appliction/json; name="Linus Cash"; hello=world'))
+        .toEqual({ name: 'Linus Cash', hello: 'world' })
+    })
+
+    test('attributes are returned as lowercase', function () {
+      expect(extractMediaTypeParameters('appliction/json; NAME="Linus Cash"; hELLo=world'))
+        .toEqual({ name: 'Linus Cash', hello: 'world' })
     })
   })
 
