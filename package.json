@@ -1,0 +1,26 @@
+{
+  "name": "extract-media-type-parameters",
+  "version": "0.0.0",
+  "description": "simple way of extracting parameters from media types",
+  "main": "src/extract-media-type-parameters.js",
+  "scripts": {
+    "test": "standard && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/linuscash/extract-media-type-parameters.git"
+  },
+  "keywords": [
+    "http",
+    "media-type",
+    "mime-type",
+    "parameters",
+    "content-negotiation"
+  ],
+  "author": "Linus Cash <contact@linuscash.co.uk>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.1.0",
+    "standard": "^11.0.1"
+  }
+}
