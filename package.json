@@ -1,6 +1,6 @@
 {
   "name": "extract-media-type-parameters",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "simple way of extracting parameters from media types",
   "main": "src/extract-media-type-parameters.js",
   "scripts": {
